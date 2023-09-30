@@ -3,14 +3,16 @@
 import * as React from 'react'
 
 import { cn } from '@/lib/utils'
-import { Icons } from '@/components/icons'
-import { Button } from './ui/button'
-import { Input } from './ui/input'
-import { Label } from './ui/label'
+import { Icons } from '@/components/atoms/icons'
+import { Button } from '../ui/button'
+import { Input } from '../ui/input'
+import { Label } from '../ui/label'
+import { useRouter } from 'next/navigation'
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
+    const router = useRouter()
     const [isLoading, setIsLoading] = React.useState<boolean>(false)
 
     async function onSubmit(event: React.SyntheticEvent) {
@@ -19,7 +21,8 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
 
         setTimeout(() => {
             setIsLoading(false)
-        }, 3000)
+            router.push('/dashboard')
+        }, 1500)
     }
 
     return (

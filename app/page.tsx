@@ -1,6 +1,6 @@
-import { ToggleTheme } from '@/components/toggle-theme'
+import { ToggleTheme } from '@/components/atoms/toggle-theme'
 import { buttonVariants } from '@/components/ui/button'
-import { UserAuthForm } from '@/components/user-auth-form'
+import { UserAuthForm } from '@/components/molecules/user-auth-form'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
